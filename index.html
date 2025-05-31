@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Service Legui</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="img/logo.png" type="image/png" />
+    <style>
+        /* Animación de aparición con zoom */
+        .cuadro {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .cuadro.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="img/logo.png" alt="Logo Service Legui" />
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#servicios" id="headerSobreNosotros">Servicios</a></li> <!-- agregué id -->
+                    <li><a href="#sobre-nosotros" id="headerSobreNosotros">Sobre Nosotros</a></li>
+                    <li><a href="#redes" id="headerSobreNosotros">Contacto</a></li>
+                   <!-- <li><a href="index2.html" id="headerSobreNosotros">Pagina2</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="img/img-principal.jpg" alt="Imagen principal" class="hero-img" />
+        <a href="#sobre-nosotros" class="btn-sobre" id="scrollBtn">Sobre Nosotros</a>
+    </section>
+
+    <section class="destacados" id="servicios">
+        <div class="cuadro">
+            <img src="img/rep-gas.jpeg" alt="Servicio 1" class="img-servicio1" />
+            <p>Limpieza profunda de unidades interiores y exteriores para un mejor rendimiento.</p>
+        </div>
+        <div class="cuadro">
+            <img src="img/limpieza.jpeg" alt="Servicio 2" class="img-servicio2" />
+            <p>Carga de gas y reparación de fugas para un aire acondicionado eficiente.</p>
+        </div>
+        <div class="cuadro">
+            <img src="img/instalacion.jpg" alt="Instalación de aires" class="img-servicio3" />
+            <p>Realizamos la instalación rápida, segura y profesional de equipos de aire acondicionado para tu hogar o negocio.</p>
+        </div>
+    </section>
+
+    <section class="sobre-nosotros" id="sobre-nosotros">
+        <div class="cuadro-central">
+            <img src="img/logo.png" alt="Logo Service Legui" />
+            <p>
+              Somos una empresa familiar comprometida con la calidad y el servicio personalizado. Desde nuestros inicios, trabajamos con dedicación para brindar soluciones eficientes y confiables en aire acondicionado, adaptándonos a las necesidades de cada cliente con profesionalismo y cercanía. Nuestra prioridad es la satisfacción y el bienestar de tu hogar o negocio, cuidando cada detalle como si fuera propio.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <h2>Contactanos</h2>
+        <section class="redes" id="redes">
+        <div class="redes">
+            <a href="https://www.instagram.com/servicelegui/#/" target="_blank" rel="noopener noreferrer">
+                <img src="img/IG.png" alt="Instagram" />
+              </a>
+            <a href="https://www.facebook.com/people/Service-Legui/61564907077254/#" target="_blank" rel="noopener noreferrer">
+                <img src="img/fc.png" alt="Facebook" />
+              </a>
+            <a href="https://api.whatsapp.com/send?phone=5491167204171&text&context=Affl3aGEp5l1I-6L1tmA3As-k4gYU7fEp2ldGhbw0y9YRqi1sZ2k2kNJCs-Xzs-0uAxnMb3KdvVaM8WN17cWixaNoNK7KNT2Uj7eTbRuNbfZyNEwdugKJ6NDUe513VH9TJUGdJTmU2w9sumAxQ&source&app=facebook" target="_blank" rel="noopener noreferrer">
+                <img src="img/whs.png" alt="WhatsApp" />
+              </a>
+        </div>
+    </footer>
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/5491167204171" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp chat">
+        <img src="img/whs.png" alt="WhatsApp" />
+    </a>
+    <script src="main.js"></script>
+</body>
+</html>
