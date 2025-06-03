@@ -18,6 +18,16 @@
             opacity: 1;
             transform: scale(1);
         }
+
+        /* Para scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Ajuste si tenés header fijo para que el ancla no quede tapado */
+        #testimonios {
+            scroll-margin-top: 100px; /* Ajusta si necesitás */
+        }
     </style>
 </head>
 <body>
@@ -30,10 +40,11 @@
                 <button class="menu-toggle" id="menuToggle">&#9776;</button>
                 <ul id="navMenu">
                     <li><a href="#">Inicio</a></li>
-                    <li><a href="#servicios" id="headerSobreNosotros">Servicios</a></li> <!-- agregué id -->
-                    <li><a href="#sobre-nosotros" id="headerSobreNosotros">Sobre Nosotros</a></li>
-                    <li><a href="#redes" id="headerSobreNosotros">Contacto</a></li>
-                   <!-- <li><a href="index2.html" id="headerSobreNosotros">Pagina2</a></li> -->
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#redes">Contacto</a></li>
+                    <li><a href="index2.html">Presupuesto</a></li>
                 </ul>
             </nav>
         </div>
@@ -59,6 +70,30 @@
         </div>
     </section>
 
+    <section class="porque-todo-cuadro">
+      <h2 class="porque-titulo">¿Por qué elegirnos?</h2>
+      <p class="porque-subtitulo">Somos expertos en instalación de aires acondicionados, ofreciendo un servicio rápido, seguro y de calidad.</p>
+    
+      <div class="porque-grid">
+        <div class="porque-item">
+          <h3>Servicios</h3>
+          <p>Realizamos Instalacion, Desintalacion, Mantenimiento y Reparaciones de Aires Acondicionados</p>
+        </div>
+        <div class="porque-item">
+          <h3>Calidad garantizada</h3>
+          <p>Trabajamos con repuestos y materiales de primera, asegurando resultados duraderos y eficientes.</p>
+        </div>
+        <div class="porque-item">
+          <h3>Horarios</h3>
+          <p>Atendemos de Lunes a Sabados de 08:00 a 18:00hs.</p>
+        </div>
+        <div class="porque-item">
+          <h3>Mas Beneficios</h3>
+          <p>Técnicos matriculados, garantía, materiales originales</p>
+        </div>
+      </div>
+    </section>
+ 
     <section class="sobre-nosotros" id="sobre-nosotros">
         <div class="cuadro-central">
             <img src="img/logo.png" alt="Logo Service Legui" />
@@ -66,6 +101,36 @@
               Somos una empresa familiar comprometida con la calidad y el servicio personalizado. Desde nuestros inicios, trabajamos con dedicación para brindar soluciones eficientes y confiables en aire acondicionado, adaptándonos a las necesidades de cada cliente con profesionalismo y cercanía. Nuestra prioridad es la satisfacción y el bienestar de tu hogar o negocio, cuidando cada detalle como si fuera propio.
             </p>
         </div>
+    </section>
+
+    <!-- Aquí está el id corregido -->
+    <section class="testimonios-todo-cuadro" id="testimonios">
+      <div class="testimonios-cuadro">
+        <h2 class="testimonios-titulo">Testimonios</h2>
+        <p class="testimonios-subtitulo">Lo que dicen nuestros clientes sobre nuestro servicio</p>
+    
+        <div class="slider" id="slider">
+          <div class="slide">
+            <p>“Servicio rápido y profesional. Instalación impecable y el equipo funciona perfecto.”</p>
+            <h3>- Juan</h3>
+          </div>
+          <div class="slide">
+            <p>“Muy buena atención, explicaron todo detalladamente y resolvieron mis dudas.”</p>
+            <h3>- Jose</h3>
+          </div>
+          <div class="slide">
+            <p>“Los técnicos dejaron todo limpio. Recomendados al 100%.”</p>
+            <h3>- Marta</h3>
+          </div>
+          <div class="slide">
+            <p>“Excelente calidad y el presupuesto fue muy justo. Volvería a contratar sin dudas.”</p>
+            <h3>- Ricardo</h3>
+          </div>
+        </div>
+    
+        <button class="nav prev" onclick="moverSlider(-1)">‹</button>
+        <button class="nav next" onclick="moverSlider(1)">›</button>
+      </div>
     </section>
 
     <footer>
