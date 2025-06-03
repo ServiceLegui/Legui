@@ -2,14 +2,126 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>Subpágina</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Service Legui Presupuesto</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="img/logo.png" type="image/png" />
+    <style>
+        /* Animación de aparición con zoom */
+        .cuadro {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .cuadro.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
 </head>
 <body>
-    <h1>Esta es la subpágina</h1>
-    <p>Contenido de la subpágina.</p>
-
-    <!-- Enlace para volver a la página principal -->
-    <a href="index.html">Volver a la página principal</a>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="img/logo.png" alt="Logo Service Legui" />
+            </a>
+            <nav>
+                <button class="menu-toggle" id="menuToggle">&#9776;</button>
+                <ul id="navMenu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li><a href="index.html#testimonios">Testimonios</a></li>
+                    <li><a href="index.html#redes">Contacto</a></li>
+                    <li><a href="index2.html">Presupuesto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<body>
+    <section class="porque-todo-cuadro">
+        <h2 class="porque-titulo">Datos requeridos por el técnico</h2>
+        <p class="porque-subtitulo">Completá los datos para agilizar el proceso del presupuesto</p>
+      
+        <form id="presupuestador-avanzado" class="presupuesto-form">
+          <label for="frigorias">Frigorías del equipo:</label>
+          <select id="frigorias" name="frigorias" required>
+            <option value="">Seleccionar</option>
+            <option value="3000">3000 Frigorías</option>
+            <option value="4500">4500 Frigorías</option>
+            <option value="6000">6000 Frigorías</option>
+          </select>
+      
+          <label for="piso">Piso del domicilio:</label>
+          <select id="piso" name="piso" required>
+            <option value="">Seleccionar</option>
+            <option value="0">Planta baja</option>
+            <option value="1000">1º o 2º piso</option>
+            <option value="2000">3º piso o más</option>
+            <option value="3000">6º piso o más</option>
+          </select>
+      
+          <label for="canaleta">¿Necesita más de 3 metros de caño?</label>
+          <select id="canaleta" name="canaleta">
+            <option value="">Seleccionar</option>
+            <option value="0">No</option>
+            <option value="1000">Sí (4 Metros)</option>
+            <option value="1500">Sí (5 Metros)</option>
+            <option value="2000">Sí (6 Metros)</option>
+          </select>
+      
+          <label for="soporte">Ubicación de la Unidad Exterior</label>
+          <select id="soporte" name="soporte">
+            <option value="">Seleccionar</option>
+            <option value="0">Apoyado al piso</option>
+            <option value="1500">Requiere ménsulas y es al vacío</option>
+            <option value="1000">Requiere ménsulas y no es al vacío</option>
+          </select>
+      
+          <label for="taparollos">Ubicación de la Unidad Interior</label>
+          <select id="taparollos" name="taparollos">
+            <option value="">Seleccionar</option>
+            <option value="0">Pared</option>
+            <option value="1500">Tapa rollo</option>
+          </select>
+      
+          <label for="zona">Ubicación:</label>
+          <select id="zona" name="zona">
+            <option value="">Seleccionar</option>
+            <option value="0">Capital Federal</option>
+            <option value="1000">Zona Sur</option>
+            <option value="1000">Zona Oeste</option>
+            <option value="1000">Zona Norte</option>
+          </select>
+      
+          <p>Luego de enviar el formulario, en lo posible adjuntar fotos de donde iría la unidad interior y exterior para un presupuesto más exacto.</p>
+      
+          <button type="button" id="btn-whatsapp">Enviar por WhatsApp</button>
+        </form>
+      </section>
+      <footer>
+        <h2>Contactanos</h2>
+        <section class="redes" id="redes">
+        <div class="redes">
+            <a href="https://www.instagram.com/servicelegui/#/" target="_blank" rel="noopener noreferrer">
+                <img src="img/IG.png" alt="Instagram" />
+              </a>
+            <a href="https://www.facebook.com/people/Service-Legui/61564907077254/#" target="_blank" rel="noopener noreferrer">
+                <img src="img/fc.png" alt="Facebook" />
+              </a>
+            <a href="https://api.whatsapp.com/send?phone=5491167204171&text&context=Affl3aGEp5l1I-6L1tmA3As-k4gYU7fEp2ldGhbw0y9YRqi1sZ2k2kNJCs-Xzs-0uAxnMb3KdvVaM8WN17cWixaNoNK7KNT2Uj7eTbRuNbfZyNEwdugKJ6NDUe513VH9TJUGdJTmU2w9sumAxQ&source&app=facebook" target="_blank" rel="noopener noreferrer">
+                <img src="img/whs.png" alt="WhatsApp" />
+              </a>
+        </div>
+    </footer>
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/5491167204171" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp chat">
+        <img src="img/whs.png" alt="WhatsApp" />
+    </a>
+    <script src="main.js"></script>
+</body>
+</html>
+    <script src="main.js"></script>
 </body>
 </html>

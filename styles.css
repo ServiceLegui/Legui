@@ -30,7 +30,7 @@ header {
     justify-content: flex-start; /* Alinea a la izquierda */
     padding-left: 0;
     margin: 0;
-    gap: 32em; /* espacio entre logo y navegación */
+    gap: 18em; /* espacio entre logo y navegación */
 }
 
 /* Logo */
@@ -39,6 +39,10 @@ header {
     display: block;
     margin-left: 0;       /* fuerza alineación izquierda */
     padding-left: 60px;
+}
+
+#testimonios {
+  scroll-margin-top: 150px; /* o ajustá según la altura de tu header */
 }
 
 html {
@@ -72,6 +76,39 @@ nav a:focus {
     outline: none;
     box-shadow: 0 0 6px #1a73e8aa;
 }
+
+
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+    /* Podés darle color al botón aquí si querés */
+  }
+
+  #navMenu {
+    display: none !important;
+  }
+
+  #navMenu.open {
+    display: flex !important;
+    flex-direction: column;
+    background-color: #123456; /* Pon acá el mismo color que tiene tu header */
+    position: absolute;        /* Para que quede sobre el contenido */
+    top: 60px;                 /* Ajustá según la altura del header */
+    right: 0;
+    width: 100%;               /* Que ocupe todo el ancho */
+    z-index: 999;
+    padding: 1em 0;
+  }
+
+  /* Opcional: que los links tengan un padding y color legible */
+  #navMenu.open li a {
+    padding: 0.8em 1.2em;
+    color: white; /* O el color que combine con tu header */
+  }
+}
+
+
 
 .hero {
     position: relative;
@@ -144,6 +181,180 @@ body > :not(header):not(.hero) {
     box-shadow: 0 8px 24px rgba(0,0,0,0.07);
     flex-wrap: wrap;
 }
+
+.porque-todo-cuadro {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  padding: 3em 2em;
+  max-width: 1200px;
+  margin: 4em auto;
+  text-align: center;
+}
+
+.porque-titulo {
+  font-size: 2.2rem;
+  color: #1a73e8;
+  margin-bottom: 0.3em;
+}
+
+.porque-subtitulo {
+  font-size: 1.1rem;
+  color: #5f6368;
+  margin-bottom: 2em;
+}
+
+.porque-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  grid-template-rows: repeat(2, auto); /* 2 filas */
+  gap: 2em;
+  text-align: left;
+}
+
+.porque-item {
+  padding: 1.5em 1.2em;
+  background-color: #f9faff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.porque-item h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #202124;
+}
+
+.porque-item p {
+  font-size: 1rem;
+  color: #5f6368;
+  margin-top: 0.8em;
+}
+/* */
+
+.testimonios-todo-cuadro {
+
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.testimonios-cuadro {
+  max-width: 900px;
+  margin: auto;
+  background-color: #ffffff; /* Cuadro blanco */
+  color: rgba(26, 115, 232, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonios-titulo {
+  font-size: 2rem;
+  color: #0c3c78;
+  margin-bottom: 0.5rem;
+}
+
+.testimonios-subtitulo {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.slide p {
+  font-style: italic;
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.slide h3 {
+  color: #0c3c78;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #0c3c78;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: background-color 0.3s;
+}
+
+.nav:hover {
+  background-color: #09407a;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+/* */ 
+.presupuesto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.presupuesto-form label {
+  font-weight: 600;
+  color: #202124;
+}
+
+.presupuesto-form select,
+.presupuesto-form input,
+.presupuesto-form button {
+  padding: 0.8em;
+  border: 1px solid #dfe1e5;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f8f9fa;
+}
+
+.presupuesto-form button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.presupuesto-form button:hover {
+  background-color: #155ecb;
+}
+
+
+
+
+/* */
 
 .cuadro {
     background: white;
@@ -309,4 +520,44 @@ footer {
     transform: scale(1.25);
     filter: drop-shadow(0 0 4px #fff);
 }
+
+@media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      background-color: #1a73e8;
+      position: fixed;
+      top: 80px;
+      right: -100%;
+      width: 200px;
+      height: calc(100% - 80px);
+      padding-top: 2em;
+      transition: right 0.3s ease;
+      border-radius: 0 0 0 10px;
+      z-index: 1000;
+    }
+  
+    nav ul.open {
+      right: 0;
+    }
+  
+    nav ul li {
+      margin-bottom: 1em;
+      text-align: center;
+    }
+  
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 1100;
+    }
+  }
+  
+  /* Fuera de la media query, ocultamos el botón hamburguesa en pantallas grandes */
+  .menu-toggle {
+    display: none;
+  }
 
