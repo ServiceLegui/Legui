@@ -39,8 +39,17 @@ header {
     align-items: center;
     justify-content: flex-start; /* Alinea a la izquierda */
     padding-left: 0;
+    position: relative;
     margin: 0;
     gap: 18em; /* espacio entre logo y navegación */
+}
+/*.header-container {
+
+  justify-content: space-between;
+
+  padding: 0 20px;
+  height: 70px;
+  position: relative;
 }
 
 /* Logo */

@@ -98,3 +98,19 @@ document.addEventListener('DOMContentLoaded', () => {
   
     cuadros.forEach(cuadro => observer.observe(cuadro));
   });
+
+  let currentSlide = 0;
+
+function moverSlider(direccion) {
+  const slider = document.getElementById("slider");
+  const slides = document.querySelectorAll(".slide");
+  const totalSlides = slides.length;
+
+  currentSlide += direccion;
+
+  if (currentSlide < 0) currentSlide = totalSlides - 1;
+  if (currentSlide >= totalSlides) currentSlide = 0;
+
+  const offset = -currentSlide * 100;
+  slider.style.transform = `translateX(${offset}%)`;
+}
