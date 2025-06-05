@@ -1,38 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('presupuestador-avanzado');
-    const btnWhatsapp = document.getElementById('btn-whatsapp');
-  
-    function obtenerTextoSeleccionado(select) {
-      return select.options[select.selectedIndex]?.text || '';
-    }
-  
-    if (btnWhatsapp && form) {
-      btnWhatsapp.addEventListener('click', () => {
-        const frigorias = parseInt(form.frigorias.value) || 0;
-        const piso = parseInt(form.piso.value) || 0;
-        const soporte = parseInt(form.soporte.value) || 0;
-        const canaleta = parseInt(form.canaleta.value) || 0;
-        const zona = parseInt(form.zona.value) || 0;
-        const taparollos = parseInt(form.taparollos.value) || 0;
-  
-        if (!form.frigorias.value || !form.piso.value) {
-          alert('Por favor completá todos los datos');
-          return;
-        }
-  
-        const mensaje = `¡Hola! Quiero solicitar un presupuesto con los siguientes datos:
-  
-  *Frigorías:* ${obtenerTextoSeleccionado(form.frigorias)}
-  *Piso:* ${obtenerTextoSeleccionado(form.piso)}
-  *Caño adicional:* ${obtenerTextoSeleccionado(form.canaleta)}
-  *Unidad Exterior:* ${obtenerTextoSeleccionado(form.soporte)}
-  *Unidad Interior:* ${obtenerTextoSeleccionado(form.taparollos)}
-  *Ubicación:* ${obtenerTextoSeleccionado(form.zona)}`;
-  
-        const url = `https://wa.me/5491167204171?text=${encodeURIComponent(mensaje)}`;
-        window.open(url, '_blank');
-      });
-    }
+  const form = document.getElementById('presupuestador-avanzado');
+  const btnWhatsapp = document.getElementById('btn-whatsapp');
+
+  function obtenerTextoSeleccionado(select) {
+    return select?.options[select.selectedIndex]?.text || '';
+  }
+
+  if (btnWhatsapp && form) {
+    btnWhatsapp.addEventListener('click', () => {
+      // Validar que haya selección obligatoria
+      if (!form.frigorias.value || !form.piso.value) {
+        alert('Por favor completá todos los datos obligatorios.');
+        return;
+      }
+
+      const frigorias = obtenerTextoSeleccionado(form.frigorias);
+      const piso = obtenerTextoSeleccionado(form.piso);
+      const soporte = obtenerTextoSeleccionado(form.soporte);
+      const taparollos = obtenerTextoSeleccionado(form.taparollos);
+      const zona = obtenerTextoSeleccionado(form.zona);
+
+      const mensaje = `¡Hola! Quiero solicitar un presupuesto con los siguientes datos:
+
+*Frigorías:* ${frigorias}
+*Piso:* ${piso}
+*Unidad Exterior:* ${soporte}
+*Unidad Interior:* ${taparollos}
+*Ubicación:* ${zona}
+
+*Recorda enviar por este chat las imagenes de donde iria la unidad interior y exterior*`;
+
+      const url = `https://wa.me/5491167204171?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    });
+  }
   
     // Menú hamburguesa
     const menuToggle = document.querySelector(".menu-toggle");
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+//
     // Scroll suave
     const scrollToSection = (id, extraOffset = 50) => {
       const target = document.getElementById(id);

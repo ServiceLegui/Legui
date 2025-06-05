@@ -41,7 +41,7 @@ header {
     padding-left: 0;
     position: relative;
     margin: 0;
-    gap: 12em; /* espacio entre logo y navegación */
+    gap: 4em; /* espacio entre logo y navegación */
 }
 
 /* Logo */
