@@ -41,15 +41,7 @@ header {
     padding-left: 0;
     position: relative;
     margin: 0;
-    gap: 18em; /* espacio entre logo y navegación */
-}
-/*.header-container {
-
-  justify-content: space-between;
-
-  padding: 0 20px;
-  height: 70px;
-  position: relative;
+    gap: 12em; /* espacio entre logo y navegación */
 }
 
 /* Logo */
@@ -61,6 +53,10 @@ header {
 }
 
 #testimonios {
+  scroll-margin-top: 150px; /* o ajustá según la altura de tu header */
+}
+
+#elegirnos {
   scroll-margin-top: 150px; /* o ajustá según la altura de tu header */
 }
 
@@ -399,6 +395,10 @@ body > :not(header):not(.hero) {
     max-width: 900px;
     margin: 3em auto 6em;
     text-align: center;
+  }
+
+  #sobre-nosotros {
+    scroll-margin-top: 150px; /* o ajustá según la altura de tu header */
   }
   
   .cuadro-central {
