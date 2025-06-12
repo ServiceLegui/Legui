@@ -3,6 +3,16 @@
     box-sizing: border-box;
 }
 
+/* Asegura que el menú esté oculto por defecto siempre */
+.nav-list {
+  display: none !important;
+  flex-direction: column;
+}
+
+.nav-list.show {
+  display: flex !important;
+}
+
 body {
     margin: 0;
     font-family: 'Inter', 'Roboto', sans-serif;
@@ -29,8 +39,9 @@ header {
     align-items: center;
     justify-content: flex-start; /* Alinea a la izquierda */
     padding-left: 0;
+    position: relative;
     margin: 0;
-    gap: 18em; /* espacio entre logo y navegación */
+    gap: 4em; /* espacio entre logo y navegación */
 }
 
 /* Logo */
@@ -42,6 +53,10 @@ header {
 }
 
 #testimonios {
+  scroll-margin-top: 150px; /* o ajustá según la altura de tu header */
+}
+
+#elegirnos {
   scroll-margin-top: 150px; /* o ajustá según la altura de tu header */
 }
 
@@ -76,39 +91,6 @@ nav a:focus {
     outline: none;
     box-shadow: 0 0 6px #1a73e8aa;
 }
-
-
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block !important;
-    /* Podés darle color al botón aquí si querés */
-  }
-
-  #navMenu {
-    display: none !important;
-  }
-
-  #navMenu.open {
-    display: flex !important;
-    flex-direction: column;
-    background-color: #123456; /* Pon acá el mismo color que tiene tu header */
-    position: absolute;        /* Para que quede sobre el contenido */
-    top: 60px;                 /* Ajustá según la altura del header */
-    right: 0;
-    width: 100%;               /* Que ocupe todo el ancho */
-    z-index: 999;
-    padding: 1em 0;
-  }
-
-  /* Opcional: que los links tengan un padding y color legible */
-  #navMenu.open li a {
-    padding: 0.8em 1.2em;
-    color: white; /* O el color que combine con tu header */
-  }
-}
-
-
 
 .hero {
     position: relative;
@@ -414,6 +396,10 @@ body > :not(header):not(.hero) {
     margin: 3em auto 6em;
     text-align: center;
   }
+
+  #sobre-nosotros {
+    scroll-margin-top: 150px; /* o ajustá según la altura de tu header */
+  }
   
   .cuadro-central {
     background: white;
@@ -521,43 +507,82 @@ footer {
     filter: drop-shadow(0 0 4px #fff);
 }
 
-@media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      background-color: #1a73e8;
-      position: fixed;
-      top: 80px;
-      right: -100%;
-      width: 200px;
-      height: calc(100% - 80px);
-      padding-top: 2em;
-      transition: right 0.3s ease;
-      border-radius: 0 0 0 10px;
-      z-index: 1000;
-    }
-  
-    nav ul.open {
-      right: 0;
-    }
-  
-    nav ul li {
-      margin-bottom: 1em;
-      text-align: center;
-    }
-  
-    .menu-toggle {
-      display: block;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-      z-index: 1100;
-    }
+/* Menú normal (pantallas grandes) */
+nav ul.nav-list {
+  display: flex;
+  gap: 3.5em;
+}
+
+/* Menú oculto por defecto en móvil */
+.nav-list {
+  display: none;
+  flex-direction: column;
+  background-color: #1a73e8cc;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  padding: 10px;
+  gap: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 100;
+}
+
+.nav-list.show {
+  display: flex;
+}
+
+/* Icono hamburguesa visible solo en móvil */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 110;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.menu-toggle .bar {
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Opcional: animación al abrir (si querés agregar más luego con JS) */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+/* En pantallas grandes: menú siempre visible y horizontal */
+@media (min-width: 768px) {
+  .nav-list {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    gap: 20px;
   }
-  
-  /* Fuera de la media query, ocultamos el botón hamburguesa en pantallas grandes */
+
   .menu-toggle {
     display: none;
   }
-
+}

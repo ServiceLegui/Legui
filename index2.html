@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Service Legui Presupuesto</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="img/logo.png" type="image/png" />
+    <link rel="icon" href="img/logo3.png" type="image/png" />
     <style>
         /* Animación de aparición con zoom */
         .cuadro {
@@ -27,10 +27,15 @@
                 <img src="img/logo.png" alt="Logo Service Legui" />
             </a>
             <nav>
-                <button class="menu-toggle" id="menuToggle">&#9776;</button>
-                <ul id="navMenu">
+              <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </button>
+                <ul id="navMenu" class="nav-list">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="#elegirnos">Porque Elegirnos</a></li>
                     <li><a href="index.html#sobre-nosotros">Sobre Nosotros</a></li>
                     <li><a href="index.html#testimonios">Testimonios</a></li>
                     <li><a href="index.html#redes">Contacto</a></li>
@@ -62,15 +67,6 @@
             <option value="3000">6º piso o más</option>
           </select>
       
-          <label for="canaleta">¿Necesita más de 3 metros de caño?</label>
-          <select id="canaleta" name="canaleta">
-            <option value="">Seleccionar</option>
-            <option value="0">No</option>
-            <option value="1000">Sí (4 Metros)</option>
-            <option value="1500">Sí (5 Metros)</option>
-            <option value="2000">Sí (6 Metros)</option>
-          </select>
-      
           <label for="soporte">Ubicación de la Unidad Exterior</label>
           <select id="soporte" name="soporte">
             <option value="">Seleccionar</option>
@@ -78,7 +74,7 @@
             <option value="1500">Requiere ménsulas y es al vacío</option>
             <option value="1000">Requiere ménsulas y no es al vacío</option>
           </select>
-      
+
           <label for="taparollos">Ubicación de la Unidad Interior</label>
           <select id="taparollos" name="taparollos">
             <option value="">Seleccionar</option>
@@ -86,7 +82,7 @@
             <option value="1500">Tapa rollo</option>
           </select>
       
-          <label for="zona">Ubicación:</label>
+          <label for="zona">Localidad:</label>
           <select id="zona" name="zona">
             <option value="">Seleccionar</option>
             <option value="0">Capital Federal</option>
@@ -94,7 +90,7 @@
             <option value="1000">Zona Oeste</option>
             <option value="1000">Zona Norte</option>
           </select>
-      
+
           <p>Luego de enviar el formulario, en lo posible adjuntar fotos de donde iría la unidad interior y exterior para un presupuesto más exacto.</p>
       
           <button type="button" id="btn-whatsapp">Enviar por WhatsApp</button>
